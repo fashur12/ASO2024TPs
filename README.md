@@ -10,3 +10,12 @@ a)
  Factores como la velocidad del procesador, la cantidad de núcleos, la memoria disponible y la carga del sistema pueden afectar el rendimiento
  por lo tanto  el tiempo de ejecución, sin embargo 
  el código con hilos debería mostrar una mejora en el tiempo de ejecución en comparación con el código sin hilos, especialmente en sistemas con múltiples núcleos o CPU.
+ c)  Al eliminar las líneas 11, 12, 19 y 20 nos introducimos  un bucle interno que no hace nada útil pero consume tiempo de CPU. 
+ Esto puede ralentizar el programa. Además de que   los hilos no están sincronizados en el acceso a la variable acumulador, puede haber resultados inconsistentes debido a condiciones de carrera.
+
+
+
+
+
+
+
