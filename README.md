@@ -14,7 +14,7 @@
  Esto puede ralentizar el programa. Además de que   los hilos no están sincronizados en el acceso a la variable acumulador, puede haber resultados inconsistentes debido a condiciones de carrera.
  
  2a)
- #include <pthread.h>
+#include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
 #define NUMBER_OF_THREADS 2
@@ -28,21 +28,25 @@ void *comer_hamburguesa(void *tid)
 	{ 
 		// INICIO DE LA ZONA CRÍTICA
 		while(turno!=(int)tid); // Control del turno
-		// turno = (turno + 1)% NUMBER_OF_THREADS;  // Línea eliminada
+		
 
 		if (cantidad_restante_hamburguesas > 0)
 		{
+			
 			printf("Hola! soy el hilo(comensal) %d , me voy a comer una hamburguesa ! ya que todavia queda/n %d \n", (int) tid, cantidad_restante_hamburguesas);
 			cantidad_restante_hamburguesas--; // me como una hamburguesa
 		}
 		else
 		{
+			 turno = (turno + 1)% NUMBER_OF_THREADS;  // Línea eliminada
 			printf("SE TERMINARON LAS HAMBURGUESAS :( \n");
 			pthread_exit(NULL); // forzar terminacion del hilo
 		}
 		turno = (turno + 1)% NUMBER_OF_THREADS; // Cambio de turno
+		
 		// SALIDA DE LA ZONA CRÍTICA   
 	}
+	
 }
 
 int main(int argc, char *argv[])
