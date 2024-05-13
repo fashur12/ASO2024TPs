@@ -18,11 +18,12 @@
  
  2)
  * a)
- <img src="./TP3/codigo_funcionando.png>
+<img src="./TP3/codigo_funcionando.png">
+
 <a href="./tp3_2a.c">puzzle resuelto</a>
 2)
 * b)
-<img src="./TP3/2b-1.png>
+<img src="./TP3/2b-1.png">
 
 
 
